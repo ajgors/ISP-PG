@@ -40,8 +40,10 @@ end encoder;
 --W sygnale led7_seg_o segment A jest podłączony do bitu 7, segment B do bitu 6, itd.
 --segmenty A B C D E F G i DP(kropka)
 architecture Behavioral of encoder is
+--number -> segmenty wyswietlacza
     signal number: std_logic_vector(6 downto 0) := (others => '1');
 begin
+--odpowienie ustawianie numbers na podstawie sw_i (z liczby na włączone segmenty)
     with sw_i(3 downto 0) select
 	number(6 downto 0) <= "0000001" when "0000", -- 0
 					  "1001111" when "0001", -- 1
@@ -63,12 +65,12 @@ begin
 					  
 	set: process( clk_i, btn_i(3 downto 0), sw_i (7 downto 4))
 	begin
-	
+	--ustawianie kropek
 		digit_o(0) <= not sw_i(4); 
 		digit_o(8) <= not sw_i(5);
 		digit_o(16) <= not sw_i(6);
 		digit_o(24) <= not sw_i(7);
-		
+	--ustawianie digit_o 
 		if rising_edge(clk_i) then
 		  if btn_i(0) = '1'  then
 			digit_o(7 downto 1) <= number;
