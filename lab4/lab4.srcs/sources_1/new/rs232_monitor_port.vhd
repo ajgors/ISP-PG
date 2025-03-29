@@ -15,17 +15,18 @@ entity rs232_monitor_port is
 end rs232_monitor_port;
 
 architecture Behavioral of rs232_monitor_port is
-   
-    --czas przesyłania jednogo bita
+    
+    --czas przesyłania jednogo bita (cykle procka na przeslanie jednego bita)
     constant bit_duration : integer := clk_freq / trans_speed;
-
+    
 --Bity danych wraz z
 --bitem kontrolnym i bitami synchronizacji (start, stop) tworzą tzw. jednostkę informacyjną SDU
 --(Serial Data Unit).
     constant SDU_length   : integer := 10;
     
-    type RECV_STATE is (NO_DATA, START, DATA, STOP);
+    type RECV_STATE is (NO_DATA, START, DATA, STOP); --stany odbierania
     
+    --zamiana 4bitow na wlaczone segmenty wyswietlacza
     function seven_seg(data_in: std_logic_vector(3 downto 0)) return std_logic_vector is
     begin
         case data_in is 
@@ -49,67 +50,85 @@ architecture Behavioral of rs232_monitor_port is
         end case;
     end function;
     
-    --zsynchronizowane rxd
-    signal RXD_sync     : STD_LOGIC := '0';
-    
-    --stan przesyłania
-    signal state        : RECV_STATE := NO_DATA;
-    
-    --licznik przesyłania bita
-    signal bit_time_cnt : integer range 1 to bit_duration := 1;
-    
-    --licznik przesłanych bitow (0 do 9)
-    signal bit_cnt      : integer range 0 to SDU_length-1 := 0;
-    
-    --rejestr dop przechowywania odebranych bitów
-    signal SDU_reg      : STD_LOGIC_VECTOR(SDU_length-1 downto 0) := (others => '0');
-    
+    signal RXD_sync : STD_LOGIC := '1'; --zsynchronizowane rxd
+    signal state        : RECV_STATE := NO_DATA; --stan przesyłania
+    signal bit_time_cnt : integer range 1 to bit_duration := 1;  --licznik przesyłania bita (licznik zwiekszac o 1 co cykl zegara)
+    signal bit_cnt      : integer range 0 to SDU_length-1 := 0; --aktualna odbierny bit (0-7)
+    signal SDU_reg      : STD_LOGIC_VECTOR(7 downto 0) := (others => '0'); --rejestr na odebrane bity (bajt danych)
     -- rejestr na odczytane znaki ascii (2 znaki)
-    -- 8 bitów odczytanych -> 2 znaki asci po 4 bit
-    signal digit_reg    : STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
+    -- 8 bitów odczytanych -> 2 znaki hex do wyswietlenia
+    signal digit_reg    : STD_LOGIC_VECTOR (31 downto 0) := (others => '1');
     
 begin
+
+    --synchronizacja rxd_i z zegarem
+    RXD_synchronized:
     process(clk_i)
     begin
         if rising_edge(clk_i) then
             RXD_sync <= RXD_i;
-            
-            if rst_i = '1' then
+        end if;
+    end process;
+
+    process(clk_i)
+    begin
+        if rising_edge(clk_i) then
+            if rst_i = '1' then --reset
                 state <= NO_DATA;
                 bit_time_cnt <= 1;
                 bit_cnt <= 0;
                 SDU_reg <= (others => '0');
-                digit_reg <= (others => '0');
+                digit_reg <= (others => '1');
             else
-                if state = NO_DATA and RXD_sync = '0' then
-                    state <= START;
-                elsif state = START and bit_cnt = 0 then
-                    state <= DATA;
-                elsif state = DATA and bit_cnt = 8 then
-                    state <= STOP;
-                elsif state = STOP and bit_cnt = 9 then
-                    state <= NO_DATA;
-                end if;
-                
-                if bit_time_cnt = bit_duration then
-                    bit_time_cnt <= 1;
-                    if state /= STOP then bit_cnt <= bit_cnt + 1; end if;
-                else
-                    bit_time_cnt <= bit_time_cnt + 1;
-                end if;
-                
-                if bit_time_cnt = bit_duration / 2 and state /= NO_DATA then
-                    SDU_reg(bit_cnt) <= RXD_sync;
-                end if;
-                
-                if state = STOP and bit_time_cnt = bit_duration / 2 then
-                    digit_reg(15 downto 9) <= seven_seg(SDU_reg(8 downto 5)); --przeslanie na lewy wyswietlacz
-                    digit_reg(7 downto 1)  <= seven_seg(SDU_reg(4 downto 1)); --na prawy
-                end if;
+                case state is
+                    when NO_DATA =>
+                        if RXD_sync = '0' then --rozpoczecie transmisji (bit startu = 0)
+                            state <= START;
+                            bit_time_cnt <= 1;
+                            bit_cnt <= 0;
+                        end if;
+                    
+                    when START =>
+                        if bit_time_cnt = bit_duration then --kiedy skonczono przesylac bit startu
+                            state <= DATA; --przejdz do stanu odbierania danych
+                            bit_time_cnt <= 1;
+                            bit_cnt <= 0;
+                        else
+                            bit_time_cnt <= bit_time_cnt + 1;
+                        end if;
+                    
+                    when DATA =>
+                        if (bit_time_cnt = bit_duration/2) then --odbierz i zapisz bit w połowie przesyłania
+                           SDU_reg(bit_cnt) <= RXD_sync; 
+                        end if;           
+                    
+                        if bit_time_cnt = bit_duration then --przejdz do odbierania kolejnego bitu
+                            bit_time_cnt <= 1;
+                            if bit_cnt = 7 then --odebrano 8bitow (przestan odbierac)
+                                state <= STOP;
+                            else
+                                bit_cnt <= bit_cnt + 1; 
+                            end if;
+                        else
+                            bit_time_cnt <= bit_time_cnt + 1;
+                        end if;
+                    
+                    when STOP =>
+                        if (bit_time_cnt = bit_duration/2) then
+                            digit_reg(7 downto 1)  <= seven_seg(SDU_reg(3 downto 0)); -- przeslanie na lewy wyswietlacz
+                            digit_reg(15 downto 9) <= seven_seg(SDU_reg(7 downto 4)); -- na prawy
+                        end if;
+                    
+                        if bit_time_cnt = bit_duration then
+                            state <= NO_DATA;                   
+                        else
+                            bit_time_cnt <= bit_time_cnt + 1;
+                        end if;
+                end case;
             end if;
         end if;
     end process;
     
-    digit_o <= digit_reg;
+    digit_o <= digit_reg; --daj do outputu (wyslij do display)
     
 end Behavioral;

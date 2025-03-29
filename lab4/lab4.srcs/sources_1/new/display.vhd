@@ -28,13 +28,13 @@ architecture Behavioral of display is
     -- 001 -drugi wyswietlacz
     -- 010 -trzeci wyswietlacz
     -- 011 -czwarty wyswietlacz
-    -- pozostałe -> zgaś wyświetlacze
+    -- pozosta?e -> zga? wy?wietlacze
     
     signal clk_freq_div_cnt : integer := 0; --liczbik multipeksacji
     signal work_freq_clk_enable : STD_LOGIC := '0'; --flaga zmiany wyswietalcza
 
 begin
---ustawienie led7_seg_o (segmenty) wyświetlacza na podstawie sygnału active_digit i digit_i
+--ustawienie led7_seg_o (segmenty) wy?wietlacza na podstawie sygna?u active_digit i digit_i
 with active_digit select
 	led7_seg_o <=  digit_i(31 downto 24) when "000",
 						digit_i(23 downto 16) when "001",
@@ -49,9 +49,9 @@ with active_digit select
 						"1110" when "011",
 						"1111" when others; 
 					
- --multipleksacja 1khz = 1ms (zamiana aktywnego wyświetlacza na kolejny)
+ --multipleksacja 1khz = 1ms (zamiana aktywnego wy?wietlacza na kolejny)
  --100mhz, czyli 100000000 operacji w 1s
- --czyli aby zmieniać wyświetlacz co 1ms musimy zmienic jak sie wykona 100000000/1000 operacji (clk_freq/work_freq)
+ --czyli aby zmienia? wy?wietlacz co 1ms musimy zmienic jak sie wykona 100000000/1000 operacji (clk_freq/work_freq)
     clk_freq_divider: process (clk_i, rst_i, active_digit) is
     begin
         if rst_i = '1' then

@@ -40,27 +40,40 @@ end top;
 
 
 architecture Behavioral of top is
-    signal digit_signal : STD_LOGIC_VECTOR(31 downto 0);
+    signal digit_i : STD_LOGIC_VECTOR (31 downto 0);
     
     component rs232_monitor_port is
-        Port ( clk_i : in STD_LOGIC;
+         Port ( clk_i : in STD_LOGIC;
                rst_i : in STD_LOGIC;
                RXD_i : in STD_LOGIC;
                digit_o : out STD_LOGIC_VECTOR (31 downto 0)
            );
     end component rs232_monitor_port;
            
-    component display port(
-           clk_i     : in STD_LOGIC;
-           rst_i : in STD_LOGIC;
-           digit_i   : in STD_LOGIC_VECTOR (31 downto 0);
-           led7_an_o : out STD_LOGIC_VECTOR (3 downto 0);
-           led7_seg_o: out STD_LOGIC_VECTOR (7 downto 0));
+     component display is
+        Port ( clk_i : in STD_LOGIC;
+               rst_i : in STD_LOGIC;
+               digit_i : in STD_LOGIC_VECTOR (31 downto 0);
+               led7_an_o : out STD_LOGIC_VECTOR (3 downto 0);
+               led7_seg_o : out STD_LOGIC_VECTOR (7 downto 0)
+           );
     end component display;
     
 begin
 
-    module1 : rs232_monitor_port port map (clk_i, rst_i, RXD_i, digit_signal);
-    module2 : display port map (clk_i,'0', digit_signal, led7_an_o, led7_seg_o);
+   comp_display: display port map(
+        clk_i => clk_i,
+        rst_i => rst_i,
+        digit_i => digit_i,
+        led7_an_o => led7_an_o,
+        led7_seg_o => led7_seg_o
+    );
+    
+    comp_rs232_port_monitor: rs232_monitor_port port map(
+        clk_i => clk_i,
+        rst_i => rst_i,
+        RXD_i => RXD_i,
+        digit_o => digit_i
+    );
     
 end Behavioral;
