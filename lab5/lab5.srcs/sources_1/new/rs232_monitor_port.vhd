@@ -1,26 +1,30 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
-entity rs232_monitor_port is
-    Generic (
-        clk_freq    : integer := 100000000;
-        trans_speed : integer := 9600
-    );
+entity rs232_port_input is
+    Generic (   
+                clk_freq : INTEGER := 100000000;    -- clock frequency in Hz (default: 100 MHz)
+                trans_speed : INTEGER := 9600       -- transmission speed in bps in RXD_i (default: 9600 bps)
+            );
+                    
     Port (
-        clk_i   : in  STD_LOGIC;
-        rst_i   : in  STD_LOGIC;
-        RXD_i   : in  STD_LOGIC;
-        digit_o : out STD_LOGIC_VECTOR (31 downto 0)
-    );
-end rs232_monitor_port;
+            clk_i : in STD_LOGIC;
+            rst_i : in STD_LOGIC;
+            RXD_i : in STD_LOGIC;
+            recv_ASCII_o : out STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
+            recv_ASCII_enable_o : out STD_LOGIC := '0'
+         );
+       
+end rs232_port_input;
 
-architecture Behavioral of rs232_monitor_port is
+architecture Behavioral of rs232_port_input is
     
-    --czas przesyłania jednogo bita (cykle procka na przeslanie jednego bita)
+    --czas przesy?ania jednogo bita (cykle procka na przeslanie jednego bita)
     constant bit_duration : integer := clk_freq / trans_speed;
     
 --Bity danych wraz z
---bitem kontrolnym i bitami synchronizacji (start, stop) tworzą tzw. jednostkę informacyjną SDU
+--bitem kontrolnym i bitami synchronizacji (start, stop) tworz? tzw. jednostk? informacyjn? SDU
 --(Serial Data Unit).
     constant SDU_length   : integer := 10;
     
@@ -51,13 +55,14 @@ architecture Behavioral of rs232_monitor_port is
     end function;
     
     signal RXD_sync : STD_LOGIC := '1'; --zsynchronizowane rxd
-    signal state        : RECV_STATE := NO_DATA; --stan przesyłania
-    signal bit_time_cnt : integer range 1 to bit_duration := 1;  --licznik przesyłania bita (licznik zwiekszac o 1 co cykl zegara)
+    signal state        : RECV_STATE := NO_DATA; --stan przesy?ania
+    signal bit_time_cnt : integer range 1 to bit_duration := 1;  --licznik przesy?ania bita (licznik zwiekszac o 1 co cykl zegara)
     signal bit_cnt      : integer range 0 to SDU_length-1 := 0; --aktualna odbierny bit (0-7)
     signal SDU_reg      : STD_LOGIC_VECTOR(7 downto 0) := (others => '0'); --rejestr na odebrane bity (bajt danych)
     -- rejestr na odczytane znaki ascii (2 znaki)
     -- 8 bitów odczytanych -> 2 znaki hex do wyswietlenia
     signal digit_reg    : STD_LOGIC_VECTOR (31 downto 0) := (others => '1');
+    signal testinput : CHARACTER;
     
 begin
 
@@ -73,12 +78,15 @@ begin
     process(clk_i)
     begin
         if rising_edge(clk_i) then
+            recv_ASCII_enable_o <= '0';
             if rst_i = '1' then --reset
                 state <= NO_DATA;
                 bit_time_cnt <= 1;
                 bit_cnt <= 0;
                 SDU_reg <= (others => '0');
                 digit_reg <= (others => '1');
+                recv_ASCII_o <= (others => '0');
+                recv_ASCII_enable_o <= '0';
             else
                 case state is
                     when NO_DATA =>
@@ -98,7 +106,7 @@ begin
                         end if;
                     
                     when DATA =>
-                        if (bit_time_cnt = bit_duration/2) then --odbierz i zapisz bit w połowie przesyłania
+                        if (bit_time_cnt = bit_duration/2) then --odbierz i zapisz bit w po?owie przesy?ania
                            SDU_reg(bit_cnt) <= RXD_sync; 
                         end if;           
                     
@@ -115,8 +123,10 @@ begin
                     
                     when STOP =>
                         if (bit_time_cnt = bit_duration/2) then
-                            digit_reg(7 downto 1)  <= seven_seg(SDU_reg(3 downto 0)); -- przeslanie na lewy wyswietlacz
-                            digit_reg(15 downto 9) <= seven_seg(SDU_reg(7 downto 4)); -- na prawy
+                            recv_ASCII_enable_o <= '1';
+                            recv_ASCII_o <= SDU_reg(7 downto 0);
+                
+                            testinput <= CHARACTER'VAL(TO_INTEGER(UNSIGNED(SDU_reg(7 downto 0))));
                         end if;
                     
                         if bit_time_cnt = bit_duration then
@@ -128,7 +138,4 @@ begin
             end if;
         end if;
     end process;
-    
-    digit_o <= digit_reg; --daj do outputu (wyslij do display)
-    
 end Behavioral;
