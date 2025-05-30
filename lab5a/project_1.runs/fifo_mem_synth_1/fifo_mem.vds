@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun May 11 21:24:46 2025
+# Process ID: 16180
+# Current directory: C:/Users/lab1/Desktop/lab5_rem/lab5v3/project_1/project_1.runs/fifo_mem_synth_1
+# Command line: vivado.exe -log fifo_mem.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fifo_mem.tcl
+# Log file: C:/Users/lab1/Desktop/lab5_rem/lab5v3/project_1/project_1.runs/fifo_mem_synth_1/fifo_mem.vds
+# Journal file: C:/Users/lab1/Desktop/lab5_rem/lab5v3/project_1/project_1.runs/fifo_mem_synth_1\vivado.jou
+#-----------------------------------------------------------
+source fifo_mem.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP fifo_mem, cache-ID = 2db557cf0c4e2871.
+INFO: [Common 17-206] Exiting Vivado at Sun May 11 21:24:49 2025...
