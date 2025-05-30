@@ -1,22 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 03/25/2025 12:45:52 PM
--- Design Name: 
--- Module Name: display - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
@@ -53,7 +34,7 @@ architecture Behavioral of display is
     signal work_freq_clk_enable : STD_LOGIC := '0'; --flaga zmiany wyswietalcza
 
 begin
---ustawienie led7_seg_o (segmenty) wyświetlacza na podstawie sygnału active_digit i digit_i
+--ustawienie led7_seg_o (segmenty) wyświetlacza na podstawie sygnalu active_digit i digit_i
 with active_digit select
 	led7_seg_o <=  digit_i(31 downto 24) when "000",
 						digit_i(23 downto 16) when "001",
@@ -68,9 +49,9 @@ with active_digit select
 						"1110" when "011",
 						"1111" when others; 
 					
- --multipleksacja 1khz = 1ms (zamiana aktywnego wyświetlacza na kolejny)
+ --multipleksacja 1khz = 1ms (zamiana aktywnego wyswietlacza na kolejny)
  --100mhz, czyli 100000000 operacji w 1s
- --czyli aby zmieniać wyświetlacz co 1ms musimy zmienic jak sie wykona 100000000/1000 operacji (clk_freq/work_freq)
+ --czyli aby zmieniac wyswietlacz co 1ms musimy zmienic jak sie wykona 100000000/1000 operacji (clk_freq/work_freq)
     clk_freq_divider: process (clk_i, rst_i, active_digit) is
     begin
         if rst_i = '1' then

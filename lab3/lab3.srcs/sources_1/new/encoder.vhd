@@ -1,23 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 03/25/2025 12:45:34 PM
--- Design Name: 
--- Module Name: encoder - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -43,7 +23,7 @@ architecture Behavioral of encoder is
 --number -> segmenty wyswietlacza
     signal number: std_logic_vector(6 downto 0) := (others => '1');
 begin
---odpowienie ustawianie numbers na podstawie sw_i (z liczby na włączone segmenty)
+--odpowienie ustawianie numbers na podstawie sw_i (z liczby na wlaczone segmenty)
     with sw_i(3 downto 0) select
 	number(6 downto 0) <= "0000001" when "0000", -- 0
 					  "1001111" when "0001", -- 1
