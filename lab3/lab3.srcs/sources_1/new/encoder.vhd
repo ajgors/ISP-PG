@@ -17,13 +17,13 @@ Port ( clk_i   : in STD_LOGIC;
            digit_o : out STD_LOGIC_VECTOR (31 downto 0));
 end encoder;
 
---W sygnale led7_seg_o segment A jest podłączony do bitu 7, segment B do bitu 6, itd.
+--W sygnale led7_seg_o segment A jest pod??czony do bitu 7, segment B do bitu 6, itd.
 --segmenty A B C D E F G i DP(kropka)
 architecture Behavioral of encoder is
 --number -> segmenty wyswietlacza
     signal number: std_logic_vector(6 downto 0) := (others => '1');
 begin
---odpowienie ustawianie numbers na podstawie sw_i (z liczby na wlaczone segmenty)
+--odpowienie ustawianie numbers na podstawie sw_i (z liczby na w??czone segmenty)
     with sw_i(3 downto 0) select
 	number(6 downto 0) <= "0000001" when "0000", -- 0
 					  "1001111" when "0001", -- 1

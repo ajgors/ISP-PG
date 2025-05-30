@@ -65,7 +65,7 @@ begin
    
 clk_i <= not clk_i after 5 ns; -- T = 10 ns | f = 100 MHz
    
- --0 3 6 9 na kolejno 4, 3, 2, 1 wyświetlaczu  
+ --0 3 6 9 na kolejno 4, 3, 2, 1 wy?wietlaczu  
    
 sim_btns: process
     begin

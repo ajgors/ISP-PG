@@ -1,122 +1,188 @@
 #-----------------------------------------------------------
-# Vivado v2024.2 (64-bit)
-# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
-# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
-# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Tue Mar 25 14:47:01 2025
-# Process ID         : 4676
-# Current directory  : C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.runs/synth_1
-# Command line       : vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file           : C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.runs/synth_1/top.vds
-# Journal file       : C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.runs/synth_1\vivado.jou
-# Running On         : DESKTOP-1GOTFFO
-# Platform           : Windows Server 2016 or Windows 10
-# Operating System   : 19045
-# Processor Detail   : Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz
-# CPU Frequency      : 2712 MHz
-# CPU Physical cores : 2
-# CPU Logical cores  : 4
-# Host memory        : 17024 MB
-# Swap memory        : 0 MB
-# Total Virtual      : 17024 MB
-# Available Virtual  : 3307 MB
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat May 31 00:40:44 2025
+# Process ID: 1892
+# Current directory: C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.runs/synth_1
+# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.runs/synth_1/top.vds
+# Journal file: C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source top.tcl -notrace
-Command: read_checkpoint -auto_incremental -incremental C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.srcs/utils_1/imports/synth_1/top.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.srcs/utils_1/imports/synth_1/top.dcp for incremental synthesis
-INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top top -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
-INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
-INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
-INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
-INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 14324
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 7948 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1010.148 ; gain = 468.973
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 811.496 ; gain = 177.086
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'top' [C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.srcs/sources_1/new/top.vhd:42]
-INFO: [Synth 8-3491] module 'encoder' declared at 'C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.srcs/sources_1/new/encoder.vhd:33' bound to instance 'module1' of component 'encoder' [C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.srcs/sources_1/new/top.vhd:62]
-INFO: [Synth 8-638] synthesizing module 'encoder' [C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.srcs/sources_1/new/encoder.vhd:42]
-INFO: [Synth 8-226] default block is never used [C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.srcs/sources_1/new/encoder.vhd:45]
-INFO: [Synth 8-256] done synthesizing module 'encoder' (0#1) [C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.srcs/sources_1/new/encoder.vhd:42]
-INFO: [Synth 8-3491] module 'display' declared at 'C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.srcs/sources_1/new/display.vhd:34' bound to instance 'module2' of component 'display' [C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.srcs/sources_1/new/top.vhd:63]
-INFO: [Synth 8-638] synthesizing module 'display' [C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.srcs/sources_1/new/display.vhd:44]
-INFO: [Synth 8-256] done synthesizing module 'display' (0#1) [C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.srcs/sources_1/new/display.vhd:44]
-INFO: [Synth 8-256] done synthesizing module 'top' (0#1) [C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.srcs/sources_1/new/top.vhd:42]
+INFO: [Synth 8-638] synthesizing module 'top' [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/sources_1/new/top.vhd:23]
+INFO: [Synth 8-3491] module 'encoder' declared at 'C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/sources_1/new/encoder.vhd:13' bound to instance 'module1' of component 'encoder' [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/sources_1/new/top.vhd:43]
+INFO: [Synth 8-638] synthesizing module 'encoder' [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/sources_1/new/encoder.vhd:22]
+INFO: [Synth 8-226] default block is never used [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/sources_1/new/encoder.vhd:28]
 WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'digit_o_reg' in module 'encoder' in the same process may cause logic issues. 
- Please split the sync and async parts into different processes [C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.srcs/sources_1/new/encoder.vhd:67]
+ Please split the sync and async parts into different processes [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/sources_1/new/encoder.vhd:49]
+INFO: [Synth 8-256] done synthesizing module 'encoder' (1#1) [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/sources_1/new/encoder.vhd:22]
+INFO: [Synth 8-3491] module 'display' declared at 'C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/sources_1/new/display.vhd:15' bound to instance 'module2' of component 'display' [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/sources_1/new/top.vhd:44]
+INFO: [Synth 8-638] synthesizing module 'display' [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/sources_1/new/display.vhd:25]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter work_freq bound to: 1000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'display' (2#1) [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/sources_1/new/display.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'top' (3#1) [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/sources_1/new/top.vhd:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1117.043 ; gain = 575.867
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 875.305 ; gain = 240.895
 ---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1117.043 ; gain = 575.867
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 875.305 ; gain = 240.895
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1117.043 ; gain = 575.867
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 875.305 ; gain = 240.895
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1117.043 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.srcs/constrs_1/new/isp3.xdc]
-Finished Parsing XDC File [C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.srcs/constrs_1/new/isp3.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.srcs/constrs_1/new/isp3.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Parsing XDC File [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc]
+WARNING: [Vivado 12-584] No ports matched 'sw_virtual_i[0]'. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw_virtual_i[1]'. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw_virtual_i[2]'. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:39]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw_virtual_i[3]'. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw_virtual_i[4]'. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:41]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:41]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw_virtual_i[5]'. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:42]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw_virtual_i[6]'. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:43]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:43]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw_virtual_i[7]'. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:44]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:44]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_virtual_i[0]'. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:45]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_virtual_i[1]'. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_virtual_i[2]'. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_virtual_i[3]'. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ps2_clk_virtual_i'. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ps2_data_virtual_i'. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.srcs/constrs_1/new/isp3.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1215.328 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 996.383 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1215.328 ; gain = 0.000
-INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
-INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 996.383 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 1215.328 ; gain = 674.152
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 996.383 ; gain = 361.973
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 1215.328 ; gain = 674.152
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 996.383 ; gain = 361.973
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 1215.328 ; gain = 674.152
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 996.383 ; gain = 361.973
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "number" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 1215.328 ; gain = 674.152
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 996.383 ; gain = 361.973
 ---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   32 Bit       Adders := 1     
-	   2 Input    3 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 2     
 	                3 Bit    Registers := 1     
 +---Muxes : 
-	   5 Input   32 Bit        Muxes := 1     
-	   4 Input    8 Bit        Muxes := 1     
-	   2 Input    8 Bit        Muxes := 1     
-	   2 Input    4 Bit        Muxes := 1     
-	   4 Input    4 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 1     
+	   5 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module encoder 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   5 Input     32 Bit        Muxes := 1     
+Module display 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Part Resource Summary
@@ -130,28 +196,46 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:47 . Memory (MB): peak = 1215.328 ; gain = 674.152
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 996.383 ; gain = 361.973
 ---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:52 ; elapsed = 00:00:58 . Memory (MB): peak = 1309.180 ; gain = 768.004
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 996.383 ; gain = 361.973
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:00:58 . Memory (MB): peak = 1331.859 ; gain = 790.684
+Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 996.383 ; gain = 361.973
 ---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:53 ; elapsed = 00:00:58 . Memory (MB): peak = 1332.539 ; gain = 791.363
+Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 996.383 ; gain = 361.973
 ---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -168,37 +252,50 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:01 ; elapsed = 00:01:07 . Memory (MB): peak = 1536.027 ; gain = 994.852
+Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1000.848 ; gain = 366.438
 ---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:01 ; elapsed = 00:01:07 . Memory (MB): peak = 1536.027 ; gain = 994.852
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1000.848 ; gain = 366.438
 ---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:01 ; elapsed = 00:01:07 . Memory (MB): peak = 1536.027 ; gain = 994.852
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1000.848 ; gain = 366.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:01 ; elapsed = 00:01:07 . Memory (MB): peak = 1536.027 ; gain = 994.852
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1000.848 ; gain = 366.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:01 ; elapsed = 00:01:07 . Memory (MB): peak = 1536.027 ; gain = 994.852
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1000.848 ; gain = 366.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:01 ; elapsed = 00:01:07 . Memory (MB): peak = 1536.027 ; gain = 994.852
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1000.848 ; gain = 366.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -226,28 +323,37 @@ Report Cell Usage:
 |10    |IBUF   |    13|
 |11    |OBUF   |    12|
 +------+-------+------+
+
+Report Instance Areas: 
++------+----------+--------+------+
+|      |Instance  |Module  |Cells |
++------+----------+--------+------+
+|1     |top       |        |   152|
+|2     |  module1 |encoder |    54|
+|3     |  module2 |display |    72|
++------+----------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:01 ; elapsed = 00:01:07 . Memory (MB): peak = 1536.027 ; gain = 994.852
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1000.848 ; gain = 366.438
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:01:02 . Memory (MB): peak = 1536.027 ; gain = 896.566
-Synthesis Optimization Complete : Time (s): cpu = 00:01:02 ; elapsed = 00:01:07 . Memory (MB): peak = 1536.027 ; gain = 994.852
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 1000.848 ; gain = 245.359
+Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1000.848 ; gain = 366.438
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1536.027 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1536.027 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1016.941 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 9a3f68b4
 INFO: [Common 17-83] Releasing license: Synthesis
-30 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+22 Infos, 15 Warnings, 14 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:10 ; elapsed = 00:01:19 . Memory (MB): peak = 1536.027 ; gain = 1200.488
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1536.027 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/igors/Desktop/studia/SEM6/isp/lab3/lab3.runs/synth_1/top.dcp' has been generated.
-INFO: [Vivado 12-24828] Executing command : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Mar 25 14:48:29 2025...
+synth_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1016.941 ; gain = 659.082
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1016.941 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/lab1/Desktop/lab3_rem/lab3_rem/lab3.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat May 31 00:41:02 2025...
