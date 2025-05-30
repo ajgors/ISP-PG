@@ -58,7 +58,7 @@ with active_digit select
             clk_freq_div_cnt <= 0;
             active_digit <= "100";
         elsif rising_edge(clk_i) then
-            if (clk_freq_div_cnt = clk_freq/work_freq) then --jak licznik jest rÃ³wny
+            if (clk_freq_div_cnt = clk_freq/work_freq) then --jak licznik jest równy
                 clk_freq_div_cnt <= 0; --zerowanie licznika
                 --nastepny wyswietlacz
 				if( active_digit = "100" or active_digit = "011" ) then

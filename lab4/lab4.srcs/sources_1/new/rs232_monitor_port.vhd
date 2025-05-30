@@ -16,11 +16,11 @@ end rs232_monitor_port;
 
 architecture Behavioral of rs232_monitor_port is
     
-    --czas przesyłania jednogo bita (cykle procka na przeslanie jednego bita)
+    --czas przesy?ania jednogo bita (cykle procka na przeslanie jednego bita)
     constant bit_duration : integer := clk_freq / trans_speed;
     
 --Bity danych wraz z
---bitem kontrolnym i bitami synchronizacji (start, stop) tworzą tzw. jednostkę informacyjną SDU
+--bitem kontrolnym i bitami synchronizacji (start, stop) tworz? tzw. jednostk? informacyjn? SDU
 --(Serial Data Unit).
     constant SDU_length   : integer := 10;
     
@@ -51,12 +51,12 @@ architecture Behavioral of rs232_monitor_port is
     end function;
     
     signal RXD_sync : STD_LOGIC := '1'; --zsynchronizowane rxd
-    signal state        : RECV_STATE := NO_DATA; --stan przesyłania
-    signal bit_time_cnt : integer range 1 to bit_duration := 1;  --licznik przesyłania bita (licznik zwiekszac o 1 co cykl zegara)
+    signal state        : RECV_STATE := NO_DATA; --stan przesy?ania
+    signal bit_time_cnt : integer range 1 to bit_duration := 1;  --licznik przesy?ania bita (licznik zwiekszac o 1 co cykl zegara)
     signal bit_cnt      : integer range 0 to SDU_length-1 := 0; --aktualna odbierny bit (0-7)
     signal SDU_reg      : STD_LOGIC_VECTOR(7 downto 0) := (others => '0'); --rejestr na odebrane bity (bajt danych)
     -- rejestr na odczytane znaki ascii (2 znaki)
-    -- 8 bitów odczytanych -> 2 znaki hex do wyswietlenia
+    -- 8 bit�w odczytanych -> 2 znaki hex do wyswietlenia
     signal digit_reg    : STD_LOGIC_VECTOR (31 downto 0) := (others => '1');
     
 begin
@@ -70,16 +70,16 @@ begin
         end if;
     end process;
 
-    process(clk_i)
+    process(clk_i, rst_i)
     begin
-        if rising_edge(clk_i) then
-            if rst_i = '1' then --reset
+          if rst_i = '1' then --reset
                 state <= NO_DATA;
                 bit_time_cnt <= 1;
                 bit_cnt <= 0;
                 SDU_reg <= (others => '0');
                 digit_reg <= (others => '1');
-            else
+          end if;      
+          if rising_edge(clk_i) then
                 case state is
                     when NO_DATA =>
                         if RXD_sync = '0' then --rozpoczecie transmisji (bit startu = 0)
@@ -98,7 +98,7 @@ begin
                         end if;
                     
                     when DATA =>
-                        if (bit_time_cnt = bit_duration/2) then --odbierz i zapisz bit w połowie przesyłania
+                        if (bit_time_cnt = bit_duration/2) then --odbierz i zapisz bit w po?owie przesy?ania
                            SDU_reg(bit_cnt) <= RXD_sync; 
                         end if;           
                     
@@ -125,7 +125,6 @@ begin
                             bit_time_cnt <= bit_time_cnt + 1;
                         end if;
                 end case;
-            end if;
         end if;
     end process;
     

@@ -28,7 +28,7 @@ architecture Behavioral of tb is
     -- CONSTANTS
     constant bit_time_duration : time := 104us; -- 104 us ~ 1/9600 s
     constant SDU_length : integer := 10;
-    constant RXD_data : STD_LOGIC_VECTOR (0 to SDU_length-1) := "0110010101";
+    constant RXD_data : STD_LOGIC_VECTOR (0 to SDU_length-1) := "0110010101"; --53 in hex
     
     -- SIGNALS
     signal clk_i : STD_LOGIC := '0';
