@@ -1,0 +1,279 @@
+04:09:29 INFO  : Registering command handlers for SDK TCF services
+04:09:29 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lab1\Desktop\project_microblaze_nexys\project_microblaze_nexys.sdk\temp_xsdb_launch_script.tcl
+04:09:31 INFO  : XSCT server has started successfully.
+04:09:31 INFO  : Successfully done setting XSCT server connection channel  
+04:09:31 INFO  : Successfully done setting SDK workspace  
+04:09:31 INFO  : Processing command line option -hwspec C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/mb_system_wrapper.hdf.
+04:11:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:11:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A" && level==0} -index 0' command is executed.
+04:11:46 INFO  : FPGA configured successfully with bitstream "C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/mb_system_wrapper_hw_platform_0/download.bit"
+04:12:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A" && level==0} -index 0' command is executed.
+04:12:04 INFO  : 'fpga -state' command is executed.
+04:12:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:12:05 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292AA7B67A' is selected.
+04:12:05 INFO  : 'jtag frequency' command is executed.
+04:12:05 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+04:12:05 INFO  : Context for processor 'microblaze_0' is selected.
+04:12:05 INFO  : Processor reset is completed for 'microblaze_0'.
+04:12:05 INFO  : Context for processor 'microblaze_0' is selected.
+04:12:05 INFO  : The application 'C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/testowy_proj1/Debug/testowy_proj1.elf' is downloaded to processor 'microblaze_0'.
+04:12:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+dow C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/testowy_proj1/Debug/testowy_proj1.elf
+----------------End of Script----------------
+
+04:12:05 INFO  : Memory regions updated for context PA
+04:12:05 INFO  : Memory regions updated for context PA
+04:12:05 INFO  : Context for processor 'microblaze_0' is selected.
+04:12:05 INFO  : 'con' command is executed.
+04:12:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+con
+----------------End of Script----------------
+
+04:12:05 INFO  : Launch script is exported to file 'C:\Users\lab1\Desktop\project_microblaze_nexys\project_microblaze_nexys.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_testowy_proj1.elf_on_local.tcl'
+04:13:33 INFO  : Disconnected from the channel tcfchan#1.
+04:13:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A" && level==0} -index 0' command is executed.
+04:13:40 INFO  : 'fpga -state' command is executed.
+04:13:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:13:40 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292AA7B67A' is selected.
+04:13:40 INFO  : 'jtag frequency' command is executed.
+04:13:40 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+04:13:40 INFO  : Context for processor 'microblaze_0' is selected.
+04:13:41 INFO  : Processor reset is completed for 'microblaze_0'.
+04:13:41 INFO  : Context for processor 'microblaze_0' is selected.
+04:13:41 INFO  : The application 'C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/testowy_proj1/Debug/testowy_proj1.elf' is downloaded to processor 'microblaze_0'.
+04:13:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+dow C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/testowy_proj1/Debug/testowy_proj1.elf
+----------------End of Script----------------
+
+04:13:41 INFO  : Memory regions updated for context PA
+04:13:41 INFO  : Memory regions updated for context PA
+04:13:41 INFO  : Context for processor 'microblaze_0' is selected.
+04:13:41 INFO  : 'con' command is executed.
+04:13:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+con
+----------------End of Script----------------
+
+04:13:41 INFO  : Launch script is exported to file 'C:\Users\lab1\Desktop\project_microblaze_nexys\project_microblaze_nexys.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_testowy_proj1.elf_on_local.tcl'
+04:14:43 INFO  : Inferring section assignments and sizes from elf file: C:\Users\lab1\Desktop\project_microblaze_nexys\project_microblaze_nexys.sdk\testowy_proj1\Debug\testowy_proj1.elf
+04:14:57 INFO  : Successfully generated C:\Users\lab1\Desktop\project_microblaze_nexys\project_microblaze_nexys.sdk\testowy_proj1\src\lscript.ld.
+04:14:57 INFO  : Applying linker script to all configurations of project testowy_proj1.
+04:14:57 INFO  : Setting rebuild state to true for all configurations of project testowy_proj1.
+04:15:26 INFO  : Disconnected from the channel tcfchan#2.
+04:15:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A" && level==0} -index 0' command is executed.
+04:15:27 INFO  : 'fpga -state' command is executed.
+04:15:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:15:27 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292AA7B67A' is selected.
+04:15:27 INFO  : 'jtag frequency' command is executed.
+04:15:27 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+04:15:27 INFO  : Context for processor 'microblaze_0' is selected.
+04:15:27 INFO  : System reset is completed.
+04:15:30 INFO  : 'after 3000' command is executed.
+04:15:30 INFO  : Context for processor 'microblaze_0' is selected.
+04:15:30 INFO  : The application 'C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/testowy_proj1/Debug/testowy_proj1.elf' is downloaded to processor 'microblaze_0'.
+04:15:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+dow C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/testowy_proj1/Debug/testowy_proj1.elf
+----------------End of Script----------------
+
+04:15:30 INFO  : Memory regions updated for context PA
+04:15:30 INFO  : Memory regions updated for context PA
+04:15:30 INFO  : Context for processor 'microblaze_0' is selected.
+04:15:30 INFO  : 'con' command is executed.
+04:15:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+con
+----------------End of Script----------------
+
+04:15:30 INFO  : Launch script is exported to file 'C:\Users\lab1\Desktop\project_microblaze_nexys\project_microblaze_nexys.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_testowy_proj1.elf_on_local.tcl'
+04:15:50 INFO  : Disconnected from the channel tcfchan#3.
+04:16:16 INFO  : Example project testowy_proj1_bsp_xgpio_example_1 has been created successfully.
+04:16:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A" && level==0} -index 0' command is executed.
+04:16:52 INFO  : 'fpga -state' command is executed.
+04:16:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:16:52 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292AA7B67A' is selected.
+04:16:52 INFO  : 'jtag frequency' command is executed.
+04:16:52 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+04:16:52 INFO  : Context for processor 'microblaze_0' is selected.
+04:16:52 INFO  : Processor reset is completed for 'microblaze_0'.
+04:16:52 INFO  : Context for processor 'microblaze_0' is selected.
+04:16:52 INFO  : The application 'C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/testowy_proj1_bsp_xgpio_example_1/Debug/testowy_proj1_bsp_xgpio_example_1.elf' is downloaded to processor 'microblaze_0'.
+04:16:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+dow C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/testowy_proj1_bsp_xgpio_example_1/Debug/testowy_proj1_bsp_xgpio_example_1.elf
+----------------End of Script----------------
+
+04:16:52 INFO  : Memory regions updated for context PA
+04:16:52 INFO  : Memory regions updated for context PA
+04:16:52 INFO  : Context for processor 'microblaze_0' is selected.
+04:16:52 INFO  : 'con' command is executed.
+04:16:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+con
+----------------End of Script----------------
+
+04:16:52 INFO  : Launch script is exported to file 'C:\Users\lab1\Desktop\project_microblaze_nexys\project_microblaze_nexys.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_testowy_proj1_bsp_xgpio_example_1.elf_on_local.tcl'
+04:17:09 INFO  : Disconnected from the channel tcfchan#4.
+06:09:35 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lab1\Desktop\project_microblaze_nexys\project_microblaze_nexys.sdk\temp_xsdb_launch_script.tcl
+06:09:36 INFO  : XSCT server has started successfully.
+06:09:36 INFO  : Successfully done setting XSCT server connection channel  
+06:09:36 INFO  : Successfully done setting SDK workspace  
+06:09:38 INFO  : Registering command handlers for SDK TCF services
+06:09:38 INFO  : Processing command line option -hwspec C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/mb_system_wrapper.hdf.
+06:09:39 INFO  : Checking for hwspec changes in the project mb_system_wrapper_hw_platform_0.
+06:09:39 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1748830002000,  Project:1748830003818
+06:09:39 INFO  : The hardware specification for project 'mb_system_wrapper_hw_platform_0' is different from C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/mb_system_wrapper.hdf.
+06:09:42 INFO  : Copied contents of C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/mb_system_wrapper.hdf into \mb_system_wrapper_hw_platform_0\system.hdf.
+06:09:43 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+06:09:44 INFO  : 
+06:09:44 INFO  : Clearing existing target manager status.
+06:09:44 INFO  : Closing and re-opening the MSS file of ther project testowy_proj1_bsp
+06:09:44 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+06:09:44 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+06:10:09 INFO  : Example project testowy_proj1_bsp_xtmrctr_intr_example_1 has been created successfully.
+06:11:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+06:11:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A" && level==0} -index 0' command is executed.
+06:11:06 INFO  : FPGA configured successfully with bitstream "C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/mb_system_wrapper_hw_platform_0/download.bit"
+06:13:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A" && level==0} -index 0' command is executed.
+06:13:03 INFO  : 'fpga -state' command is executed.
+06:13:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+06:13:03 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292AA7B67A' is selected.
+06:13:03 INFO  : 'jtag frequency' command is executed.
+06:13:03 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+06:13:03 INFO  : Context for processor 'microblaze_0' is selected.
+06:13:03 INFO  : Processor reset is completed for 'microblaze_0'.
+06:13:03 INFO  : Context for processor 'microblaze_0' is selected.
+06:13:03 INFO  : The application 'C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/testowy_proj1_bsp_xtmrctr_intr_example_1/Debug/testowy_proj1_bsp_xtmrctr_intr_example_1.elf' is downloaded to processor 'microblaze_0'.
+06:13:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+dow C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/testowy_proj1_bsp_xtmrctr_intr_example_1/Debug/testowy_proj1_bsp_xtmrctr_intr_example_1.elf
+----------------End of Script----------------
+
+06:13:03 INFO  : Memory regions updated for context PA
+06:13:03 INFO  : Memory regions updated for context PA
+06:13:03 INFO  : Context for processor 'microblaze_0' is selected.
+06:13:03 INFO  : 'con' command is executed.
+06:13:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+con
+----------------End of Script----------------
+
+06:13:03 INFO  : Launch script is exported to file 'C:\Users\lab1\Desktop\project_microblaze_nexys\project_microblaze_nexys.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_testowy_proj1_bsp_xtmrctr_intr_example_1.elf_on_local.tcl'
+06:14:04 INFO  : Disconnected from the channel tcfchan#1.
+06:14:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+06:14:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A" && level==0} -index 0' command is executed.
+06:14:21 INFO  : FPGA configured successfully with bitstream "C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/mb_system_wrapper_hw_platform_0/download.bit"
+06:14:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A" && level==0} -index 0' command is executed.
+06:14:49 INFO  : 'fpga -state' command is executed.
+06:14:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+06:14:49 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292AA7B67A' is selected.
+06:14:49 INFO  : 'jtag frequency' command is executed.
+06:14:49 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+06:14:49 INFO  : Context for processor 'microblaze_0' is selected.
+06:14:49 INFO  : Processor reset is completed for 'microblaze_0'.
+06:14:49 INFO  : Context for processor 'microblaze_0' is selected.
+06:14:49 INFO  : The application 'C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/testowy_proj1_bsp_xtmrctr_intr_example_1/Debug/testowy_proj1_bsp_xtmrctr_intr_example_1.elf' is downloaded to processor 'microblaze_0'.
+06:14:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+dow C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/testowy_proj1_bsp_xtmrctr_intr_example_1/Debug/testowy_proj1_bsp_xtmrctr_intr_example_1.elf
+----------------End of Script----------------
+
+06:14:49 INFO  : Memory regions updated for context PA
+06:14:49 INFO  : Memory regions updated for context PA
+06:14:49 INFO  : Context for processor 'microblaze_0' is selected.
+06:14:49 INFO  : 'con' command is executed.
+06:14:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+con
+----------------End of Script----------------
+
+06:14:49 INFO  : Launch script is exported to file 'C:\Users\lab1\Desktop\project_microblaze_nexys\project_microblaze_nexys.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_testowy_proj1_bsp_xtmrctr_intr_example_1.elf_on_local.tcl'
+06:15:38 INFO  : Disconnected from the channel tcfchan#2.
+06:15:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A" && level==0} -index 0' command is executed.
+06:15:58 INFO  : 'fpga -state' command is executed.
+06:15:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+06:15:58 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292AA7B67A' is selected.
+06:15:58 INFO  : 'jtag frequency' command is executed.
+06:15:58 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+06:15:58 INFO  : Context for processor 'microblaze_0' is selected.
+06:15:58 INFO  : Processor reset is completed for 'microblaze_0'.
+06:15:58 INFO  : Context for processor 'microblaze_0' is selected.
+06:15:58 INFO  : The application 'C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/testowy_proj1_bsp_xtmrctr_intr_example_1/Debug/testowy_proj1_bsp_xtmrctr_intr_example_1.elf' is downloaded to processor 'microblaze_0'.
+06:15:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+dow C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/testowy_proj1_bsp_xtmrctr_intr_example_1/Debug/testowy_proj1_bsp_xtmrctr_intr_example_1.elf
+----------------End of Script----------------
+
+06:15:58 INFO  : Memory regions updated for context PA
+06:15:58 INFO  : Memory regions updated for context PA
+06:15:58 INFO  : Context for processor 'microblaze_0' is selected.
+06:15:58 INFO  : 'con' command is executed.
+06:15:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+con
+----------------End of Script----------------
+
+06:15:58 INFO  : Launch script is exported to file 'C:\Users\lab1\Desktop\project_microblaze_nexys\project_microblaze_nexys.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_testowy_proj1_bsp_xtmrctr_intr_example_1.elf_on_local.tcl'
+06:22:12 INFO  : Disconnected from the channel tcfchan#3.
+06:22:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A" && level==0} -index 0' command is executed.
+06:22:13 INFO  : 'fpga -state' command is executed.
+06:22:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+06:22:13 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292AA7B67A' is selected.
+06:22:13 INFO  : 'jtag frequency' command is executed.
+06:22:13 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+06:22:13 INFO  : Context for processor 'microblaze_0' is selected.
+06:22:13 INFO  : Processor reset is completed for 'microblaze_0'.
+06:22:13 INFO  : Context for processor 'microblaze_0' is selected.
+06:22:13 INFO  : The application 'C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/testowy_proj1_bsp_xtmrctr_intr_example_1/Debug/testowy_proj1_bsp_xtmrctr_intr_example_1.elf' is downloaded to processor 'microblaze_0'.
+06:22:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+dow C:/Users/lab1/Desktop/project_microblaze_nexys/project_microblaze_nexys.sdk/testowy_proj1_bsp_xtmrctr_intr_example_1/Debug/testowy_proj1_bsp_xtmrctr_intr_example_1.elf
+----------------End of Script----------------
+
+06:22:13 INFO  : Memory regions updated for context PA
+06:22:13 INFO  : Memory regions updated for context PA
+06:22:13 INFO  : Context for processor 'microblaze_0' is selected.
+06:22:13 INFO  : 'con' command is executed.
+06:22:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys A7 -100T 210292AA7B67A"} -index 0
+con
+----------------End of Script----------------
+
+06:22:13 INFO  : Launch script is exported to file 'C:\Users\lab1\Desktop\project_microblaze_nexys\project_microblaze_nexys.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_testowy_proj1_bsp_xtmrctr_intr_example_1.elf_on_local.tcl'
+06:31:23 INFO  : Disconnected from the channel tcfchan#4.

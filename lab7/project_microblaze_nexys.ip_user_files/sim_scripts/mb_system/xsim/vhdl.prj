@@ -1,0 +1,17 @@
+vhdl xil_defaultlib  \
+"../../../bd/mb_system/ip/mb_system_microblaze_0_1/sim/mb_system_microblaze_0_1.vhd" \
+"../../../bd/mb_system/ip/mb_system_axi_gpio_0_3/sim/mb_system_axi_gpio_0_3.vhd" \
+"../../../bd/mb_system/ip/mb_system_axi_uartlite_0_3/sim/mb_system_axi_uartlite_0_3.vhd" \
+"../../../bd/mb_system/ip/mb_system_axi_gpio_1_3/sim/mb_system_axi_gpio_1_3.vhd" \
+"../../../bd/mb_system/ip/mb_system_dlmb_v10_3/sim/mb_system_dlmb_v10_3.vhd" \
+"../../../bd/mb_system/ip/mb_system_ilmb_v10_3/sim/mb_system_ilmb_v10_3.vhd" \
+"../../../bd/mb_system/ip/mb_system_dlmb_bram_if_cntlr_3/sim/mb_system_dlmb_bram_if_cntlr_3.vhd" \
+"../../../bd/mb_system/ip/mb_system_ilmb_bram_if_cntlr_3/sim/mb_system_ilmb_bram_if_cntlr_3.vhd" \
+"../../../bd/mb_system/ip/mb_system_lmb_v10_3/sim/mb_system_lmb_v10_3.vhd" \
+"../../../bd/mb_system/ip/mb_system_microblaze_0_axi_intc_0/sim/mb_system_microblaze_0_axi_intc_0.vhd" \
+"../../../bd/mb_system/ip/mb_system_mdm_1_3/sim/mb_system_mdm_1_3.vhd" \
+"../../../bd/mb_system/ip/mb_system_rst_clk_wiz_0_100M_3/sim/mb_system_rst_clk_wiz_0_100M_3.vhd" \
+"../../../bd/mb_system/ip/mb_system_axi_timer_0_0/sim/mb_system_axi_timer_0_0.vhd" \
+"../../../bd/mb_system/sim/mb_system.vhd" \
+
+nosort

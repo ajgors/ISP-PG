@@ -1,0 +1,4 @@
+
+*** Running vivado
+    with args -log mb_system_lmb_v10_3.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mb_system_lmb_v10_3.tcl
+
